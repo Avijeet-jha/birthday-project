@@ -7,7 +7,11 @@ import { supabase } from "./lib/supabase";
 const sectionIds = ["memories", "funny", "gift", "neha-things", "final"];
 
 function scrollTo(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  document.getElementById(id)?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest",
+  });
 }
 
 function Sparkles() {

@@ -33,7 +33,11 @@
   background: var(--deep-rose);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  overscroll-behavior-y: none;
+}
 
 body {
   margin: 0;
@@ -213,6 +217,7 @@ button:active { transform: translateY(1px); }
   position: relative;
   z-index: 1;
   padding: clamp(64px, 8vw, 96px) var(--container-gutter);
+  scroll-margin-top: 84px;
 }
 
 #memories,
@@ -1344,6 +1349,12 @@ button:active { transform: translateY(1px); }
   border-bottom: 1px solid rgba(184,50,103,.14);
   padding: 10px clamp(14px, 4vw, 52px);
   box-shadow: 0 10px 30px rgba(87,52,68,.08);
+  transition: box-shadow .3s ease, background .3s ease;
+}
+
+.nav-pill:hover {
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 14px 34px rgba(87,52,68,.14);
 }
 
 .nav-pill > button {
