@@ -54,8 +54,6 @@ body {
   line-height: 1.5;
 }
 
-body.memory-locked { overflow: hidden; }
-
 button { font: inherit; }
 
 button:focus-visible {

@@ -113,29 +113,6 @@ function Memories({ onComplete }: { onComplete: () => void }) {
   const [answers, setAnswers] = useState(() => questions.map(() => ""));
   const [submittedAnswers, setSubmittedAnswers] = useState<string[] | null>(null);
 
-  useEffect(() => {
-    if (submittedAnswers) return;
-
-    const section = document.getElementById("memories");
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
-          document.body.classList.add("memory-locked");
-        }
-      },
-      { threshold: [0.55] },
-    );
-
-    observer.observe(section);
-
-    return () => {
-      observer.disconnect();
-      document.body.classList.remove("memory-locked");
-    };
-  }, [submittedAnswers]);
-
   function updateAnswer(index: number, value: string) {
     setAnswers((current) =>
       current.map((answer, answerIndex) =>
@@ -166,7 +143,6 @@ function Memories({ onComplete }: { onComplete: () => void }) {
 
     setSubmittedAnswers(cleanedAnswers);
     onComplete();
-    document.body.classList.remove("memory-locked");
     celebrate();
   }
 
