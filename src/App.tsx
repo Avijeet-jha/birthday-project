@@ -460,7 +460,7 @@ function FinalSurprise() {
               Made with 🎀, memories & questionable decisions.
             </div>
 
-            <div className="footer-name">For Neha 🎀</div>
+            <div className="footer-name">By Avijeeet 🎀</div>
           </>
         )}
       </div>
